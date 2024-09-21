@@ -5,7 +5,7 @@ from tensorflow.keras.layers import Input, LSTM, Dense
 from preprocess import preprocess_data  # Import the preprocess function
 
 # Path to your dataset
-file_path = 'C:/Users/admin/Desktop/movie_lines.tsv'
+file_path = 'C:/Users/asus/Desktop/Github/Testings-Only/movie_lines.tsv'
 
 # Preprocess the data
 encoder_input_data, decoder_input_data, vocab_size = preprocess_data(file_path)
