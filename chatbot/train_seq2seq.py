@@ -44,3 +44,4 @@ decoder_target_data[:, :-1] = decoder_input_data[:, 1:]
 
 # Train the model (you might want to tune the batch size and number of epochs)
 model.fit([encoder_input_data, decoder_input_data], decoder_target_data, batch_size=32, epochs=100, validation_split=0.2)
+model.save("MyShit.h5")
