@@ -41,7 +41,7 @@ decoder_target_data = np.zeros_like(decoder_input_data)
 decoder_target_data[:, :-1] = decoder_input_data[:, 1:]
 
 
-model.fit([encoder_input_data, decoder_input_data], decoder_target_data, batch_size=32, epochs=100, validation_split=0.2)
+model.fit([encoder_input_data, decoder_input_data], decoder_target_data, batch_size=32, epochs=1, validation_split=0.2)
 
 model.save("my_model_shitty.h5")
 
