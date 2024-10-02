@@ -3,10 +3,10 @@ import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, LSTM, Dense
 
-# Define hyperparameters
-latent_dim = 256  # Dimensionality of the latent space (i.e., the output of the LSTM)
-vocab_size = 61925  # Use the vocab size from your preprocessing step
-max_sequence_length = encoder_input_data.shape[1]  # The max length of the padded sequences
+
+latent_dim = 256  
+vocab_size = 61925 
+max_sequence_length = encoder_input_data.shape[1]  
 
 # Encoder
 encoder_inputs = Input(shape=(None,))
@@ -23,11 +23,11 @@ decoder_outputs, _, _ = decoder_lstm(decoder_embedding, initial_state=encoder_st
 decoder_dense = Dense(vocab_size, activation='softmax')
 decoder_outputs = decoder_dense(decoder_outputs)
 
-# Define the model that will turn encoder_input_data & decoder_input_data into decoder_target_data
+
 model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
 
-# Compile the model
+
 model.compile(optimizer='rmsprop', loss='sparse_categorical_crossentropy')
 
-# Summarize the model architecture
+
 model.summary()
